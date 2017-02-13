@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -25,6 +26,7 @@
 		26F95D5DCA0B4840B94F9D08 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 536E5751208344908AA92B41 /* MaterialCommunityIcons.ttf */; };
 		27988C872E9A45C6939B53DE /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8522802A1FC545C0A37582A3 /* Entypo.ttf */; };
 		2F0BADDDB5FF464194798D38 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 035DE08BEC4D4C369FB89E38 /* EvilIcons.ttf */; };
+		3055AC71F09444498AB76AE5 /* libRNBlur.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D6A8B904E447A7A2F9CF72 /* libRNBlur.a */; };
 		3E974A9AA2D148A98B326676 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4DFFCD6C3F40A3BD61E6C3 /* libRNVectorIcons.a */; };
 		45AEF2ED5B984C72B4B2A370 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FFDCA9A2118450B93C343C2 /* Zocial.ttf */; };
 		48911DF1CE004EED8F43224E /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30F9390524F8436592D8B1EF /* Ionicons.ttf */; };
@@ -216,6 +218,13 @@
 			remoteGlobalIDString = 5DBEB1501B18CEA900B34395;
 			remoteInfo = RNVectorIcons;
 		};
+		5EEC5B041E51DB17005F8877 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72EAFC7A92A6437CA22F84DC /* RNBlur.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A68BD7BC1BC31318005F02DF;
+			remoteInfo = RNBlur;
+		};
 		5EF0F9331E4CAD0100C7EE70 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E98D57D2E542425699B1950F /* Firestack.xcodeproj */;
@@ -268,6 +277,8 @@
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		5EF0F9981E4CAEB800C7EE70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E4DFFCD6C3F40A3BD61E6C3 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
+		72D6A8B904E447A7A2F9CF72 /* libRNBlur.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNBlur.a; sourceTree = "<group>"; };
+		72EAFC7A92A6437CA22F84DC /* RNBlur.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNBlur.xcodeproj; path = "../node_modules/react-native-blur/ios/RNBlur.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		7A39C48B0C25734771A64E6D /* Pods-rhinoplastyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rhinoplastyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rhinoplastyTests/Pods-rhinoplastyTests.release.xcconfig"; sourceTree = "<group>"; };
 		7ADBD1951B55868FC2025931 /* Pods-rhinoplastyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rhinoplastyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rhinoplastyTests/Pods-rhinoplastyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -313,6 +324,7 @@
 				79D9278031B04F01AEE85C9C /* libFirestack.a in Frameworks */,
 				F2E5A8F97C5D3D7093762FA8 /* Pods_rhinoplasty.framework in Frameworks */,
 				3E974A9AA2D148A98B326676 /* libRNVectorIcons.a in Frameworks */,
+				3055AC71F09444498AB76AE5 /* libRNBlur.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +471,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5EEC5AE71E51DB17005F8877 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5EEC5B051E51DB17005F8877 /* libRNBlur.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5EF0F9301E4CAD0100C7EE70 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,6 +523,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				E98D57D2E542425699B1950F /* Firestack.xcodeproj */,
 				09B51D9F097D41029C6A9569 /* RNVectorIcons.xcodeproj */,
+				72EAFC7A92A6437CA22F84DC /* RNBlur.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -672,6 +693,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = 5EEC5AE71E51DB17005F8877 /* Products */;
+					ProjectRef = 72EAFC7A92A6437CA22F84DC /* RNBlur.xcodeproj */;
 				},
 				{
 					ProductGroup = 5EEC5A351E51BB64005F8877 /* Products */;
@@ -853,6 +878,13 @@
 			fileType = archive.ar;
 			path = libRNVectorIcons.a;
 			remoteRef = 5EEC5A521E51BB64005F8877 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5EEC5B051E51DB17005F8877 /* libRNBlur.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNBlur.a;
+			remoteRef = 5EEC5B041E51DB17005F8877 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5EF0F9341E4CAD0100C7EE70 /* libFirestack.a */ = {
@@ -1074,6 +1106,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1097,6 +1130,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",

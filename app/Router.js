@@ -3,6 +3,9 @@ import { Scene, Router } from 'react-native-router-flux';
 
 import Home from './components/Home';
 import Contact from './components/Contact';
+import Watch from './components/Watch';
+import Listen from './components/Listen';
+import Gigs from './components/Gigs';
 
 const RouterComponent = () => {
   return (
@@ -23,6 +26,27 @@ const RouterComponent = () => {
           key="contactScene"
           component={Contact}
           title="Contact"
+        />
+      </Scene>
+      <Scene key="watch">
+        <Scene
+          key="watchScene"
+          component={Watch}
+          title="Watch"
+        />
+      </Scene>
+      <Scene key="listen">
+        <Scene
+          key="listenScene"
+          component={Listen}
+          title="Listen"
+        />
+      </Scene>
+      <Scene key="gigs">
+        <Scene
+          key="gigsScene"
+          component={Gigs}
+          title="Gigs"
         />
       </Scene>
     </Router>

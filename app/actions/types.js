@@ -1,1 +1,4 @@
 export const CONTACT_PRESSED = 'CONTACT_PRESSED';
+export const WATCH_PRESSED = 'WATCH_PRESSED';
+export const LISTEN_PRESSED = 'LISTEN_PRESSED';
+export const GIGS_PRESSED = 'GIGS_PRESSED';

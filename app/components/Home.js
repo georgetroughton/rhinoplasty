@@ -16,7 +16,7 @@ import {
 import { connect } from 'react-redux';
 
 import { FloatingActionButton } from './common';
-import { onPressContact } from '../actions';
+import { onPressContact, onPressWatch, onPressListen, onPressGigs } from '../actions';
 
 class Home extends Component {
 
@@ -44,7 +44,10 @@ class Home extends Component {
             </View>
           </ScrollView>
 
-          <FloatingActionButton onPressContact={this.props.onPressContact} />
+          <FloatingActionButton
+            onPressContact={this.props.onPressContact}
+            onPressWatch={this.props.onPressWatch}
+          />
         </View>
       );
     }
@@ -67,4 +70,7 @@ class Home extends Component {
     return { error, loading };
   };
 
-  export default connect(mapStateToProps, { onPressContact })(Home);
+  export default connect(mapStateToProps, { onPressContact,
+                                            onPressWatch,
+                                            onPressListen,
+                                            onPressGigs })(Home);

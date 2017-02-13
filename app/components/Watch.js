@@ -16,7 +16,7 @@ import { connect } from 'react-redux';
 import { FloatingActionButton } from './common';
 import { onPressContact, onPressWatch, onPressListen, onPressGigs } from '../actions';
 
-class Contact extends Component {
+class Watch extends Component {
 
     render() {
       return (
@@ -24,17 +24,17 @@ class Contact extends Component {
           <ScrollView>
             <View style={{ flex: 1 }} >
             <Text style={styles.homeText}>
-                Facebook
+                Video
               </Text>
               <Text style={styles.homeText}>
-                Email
+                Video
               </Text>
             </View>
           </ScrollView>
 
           <FloatingActionButton
-            onPressContact={() => { return false; }}
-            onPressWatch={this.props.onPressWatch}
+            onPressContact={this.props.onPressContact}
+            onPressWatch={() => { return false; }}
             onPressListen={this.props.onPressListen}
             onPressGigs={this.props.onPressGigs}
           />
@@ -58,4 +58,4 @@ class Contact extends Component {
 export default connect(null, { onPressContact,
                                onPressWatch,
                                onPressListen,
-                               onPressGigs })(Contact);
+                               onPressGigs })(Watch);

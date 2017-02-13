@@ -7,21 +7,70 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  View
+  View,
+  Dimensions
 } from 'react-native';
 
-import { ActionButton } from 'react-native-material-ui';
+import ActionButton from 'react-native-action-button';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { BlurView } from 'react-native-blur';
 
 class FloatingActionButton extends Component {
 
     render() {
+      const { width, height } = Dimensions.get('window');
+
       return (
         <View>
           <ActionButton
-            actions={['email', { icon: 'phone', label: 'Phone' }, 'sms', 'favorite']}
-            icon="share"
-            transition="speedDial"
-          />
+            buttonColor="rgba(0,0,0,0.3)"
+            icon={<Icon name="ios-menu" style={styles.actionButtonIcon} />}
+            degrees={0}
+            backdrop={
+                      <BlurView
+                        blurType="xlight"
+                        blurAmount={2}
+                        style={{ width, height }}
+                      />
+                    }
+          >
+            <ActionButton.Item
+              buttonColor='#000000'
+              title="Gigs"
+              onPress={this.props.onPressGigs}
+              titleColor="#ffffff"
+              titleBgColor="#000000"
+            >
+              <Icon name="md-microphone" style={styles.actionButtonIcon} />
+            </ActionButton.Item>
+            <ActionButton.Item
+              buttonColor='#000000'
+              title="Listen"
+              onPress={this.props.onPressListen}
+              titleColor="#ffffff"
+              titleBgColor="#000000"
+            >
+              <Icon name="md-musical-notes" style={styles.actionButtonIcon} />
+            </ActionButton.Item>
+            <ActionButton.Item
+              buttonColor='#000000'
+              title="Watch"
+              onPress={this.props.onPressWatch}
+              titleColor="#ffffff"
+              titleBgColor="#000000"
+            >
+              <Icon name="md-videocam" style={styles.actionButtonIcon} />
+            </ActionButton.Item>
+            <ActionButton.Item
+              buttonColor='#000000'
+              title="Contact"
+              onPress={this.props.onPressContact}
+              titleColor="#ffffff"
+              titleBgColor="#000000"
+            >
+              <Icon name="md-contact" style={styles.actionButtonIcon} />
+            </ActionButton.Item>
+          </ActionButton>
         </View>
       );
     }
