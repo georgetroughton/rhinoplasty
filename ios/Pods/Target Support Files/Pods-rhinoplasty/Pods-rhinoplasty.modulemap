@@ -1,0 +1,6 @@
+framework module Pods_rhinoplasty {
+  umbrella header "Pods-rhinoplasty-umbrella.h"
+
+  export *
+  module * { export * }
+}

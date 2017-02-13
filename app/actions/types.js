@@ -1,0 +1,1 @@
+export const CONTACT_PRESSED = 'CONTACT_PRESSED';
