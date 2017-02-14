@@ -47,6 +47,8 @@ class Home extends Component {
           <FloatingActionButton
             onPressContact={this.props.onPressContact}
             onPressWatch={this.props.onPressWatch}
+            onPressListen={this.props.onPressListen}
+            onPressGigs={this.props.onPressGigs}
           />
         </View>
       );
