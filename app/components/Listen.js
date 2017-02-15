@@ -13,14 +13,14 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 
-import { FloatingActionButton } from './common';
+import { FloatingActionButton, BackgroundImage } from './common';
 import { onPressContact, onPressWatch, onPressListen, onPressGigs } from '../actions';
 
 class Listen extends Component {
 
     render() {
       return (
-        <View style={{ flex: 1, backgroundColor: '#f9f9f9' }}>
+        <BackgroundImage>
           <ScrollView>
             <View style={{ flex: 1 }} >
             <Text style={styles.homeText}>
@@ -38,7 +38,7 @@ class Listen extends Component {
             onPressListen={() => { return false; }}
             onPressGigs={this.props.onPressGigs}
           />
-        </View>
+        </BackgroundImage>
       );
     }
 

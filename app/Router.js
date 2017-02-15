@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import Home from './components/Home';
 import Contact from './components/Contact';
-import Watch from './components/Watch';
+import VideoList from './components/VideoList';
 import Listen from './components/Listen';
 import Gigs from './components/Gigs';
 import Video from './components/Video';
@@ -15,7 +15,7 @@ const RouterComponent = ({ firestack }) => {
   return (
     <Router
       sceneStyle={{ paddingTop: 65 }}
-      navigationBarStyle={{ backgroundColor: '#f9f9f9' }}
+      navigationBarStyle={{ backgroundColor: '#cccccc' }}
       titleStyle={{ color: '#000000', fontWeight: 'bold', fontSize: 18 }}
       renderRightButton={() => {
         return (<TouchableOpacity onPress={() => { Actions.home({ type: 'replace' }); }}>
@@ -39,9 +39,9 @@ const RouterComponent = ({ firestack }) => {
       </Scene>
       <Scene key="watch">
         <Scene
-          key="watchScene"
-          component={Watch}
-          title="Watch"
+          key="videoList"
+          component={VideoList}
+          title="YouTube Videos"
           firestack={firestack}
         />
         <Scene

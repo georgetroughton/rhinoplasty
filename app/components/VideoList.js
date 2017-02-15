@@ -1,13 +1,12 @@
-import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ListView, View } from 'react-native';
 
-import { FloatingActionButton } from './common';
+import { FloatingActionButton, BackgroundImage } from './common';
 import { onPressContact, onPressWatch, onPressListen, onPressGigs, videosFetch } from '../actions';
-import ListItem from './ListItem';
+import VideoListItem from './VideoListItem';
 
-class Watch extends Component {
+class VideoList extends Component {
   componentWillMount() {
     this.props.videosFetch(this.props.firestack);
 
@@ -27,12 +26,12 @@ class Watch extends Component {
   }
 
   renderRow(video) {
-    return <ListItem video={video} />;
+    return <VideoListItem video={video} />;
   }
 
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: '#f9f9f9' }}>
+      <BackgroundImage>
         <ListView
           enableEmptySections
           dataSource={this.dataSource}
@@ -41,22 +40,17 @@ class Watch extends Component {
         />
         <FloatingActionButton
           onPressContact={this.props.onPressContact}
-          onPressWatch={this.props.onPressWatch}
+          onPressWatch={() => { return false; }}
           onPressListen={this.props.onPressListen}
           onPressGigs={this.props.onPressGigs}
         />
-      </View>
+      </BackgroundImage>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  // const videos = _.map(state.videos, (val) => {
-  //   return { ...val };
-  // });
   const videos = state.videos;
-  //const firestack = state.setup;
-
   return { videos };
 };
 
@@ -64,4 +58,4 @@ export default connect(mapStateToProps, { onPressContact,
                                onPressWatch,
                                onPressListen,
                                onPressGigs,
-                               videosFetch })(Watch);
+                               videosFetch })(VideoList);

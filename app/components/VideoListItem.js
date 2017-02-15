@@ -4,9 +4,9 @@ import { Actions } from 'react-native-router-flux';
 
 import { CardSection } from './common';
 
-class ListItem extends Component {
+class VideoListItem extends Component {
   onRowPress() {
-    Actions.video({ video: this.props.video });
+    Actions.video({ video: this.props.video, title: this.props.video.title });
   }
 
   render() {
@@ -33,4 +33,4 @@ const styles = {
   }
 };
 
-export default ListItem;
+export default VideoListItem;

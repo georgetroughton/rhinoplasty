@@ -31,7 +31,7 @@ class Video extends Component {
       return (
 
           <View style={styles.container}>
-
+            <Text style={styles.instructions}>{this.props.video.title}</Text>
             <YouTube
               videoId={this.props.video.id}
               play={this.state.isPlaying}
