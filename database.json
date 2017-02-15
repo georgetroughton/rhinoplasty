@@ -1,0 +1,25 @@
+{
+  "videos":{
+    "v1":{
+      "id":"4Ve0XPoiH74",
+      "title":"Long Train Running",
+      "description":""
+    },
+    "v2":{
+      "id":"2uSvhHRFkvU",
+      "title":"Johnny B Goode",
+      "description":""
+    }
+  },
+  "songs":{},
+  "gigs":{
+    "g1":{
+      "date":"11/02/2017",
+      "time":"9pm",
+      "venue":"The Shepherds Hut",
+      "address":"Eton Wick Rd, Eton Wick, Windsor SL4 6LU",
+      "website":"http://www.shepherdshutetonwick.co.uk/",
+      "map":"https://www.google.co.uk/maps/place/The+Shepherds+Hut/@51.4975254,-0.63693,15z/data=!4m5!3m4!1s0x0:0x22cf51810f7e8649!8m2!3d51.4975254!4d-0.63693"
+    }
+  }
+}

@@ -1,108 +1,67 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
+import _ from 'lodash';
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity
-} from 'react-native';
 import { connect } from 'react-redux';
-import YouTube from 'react-native-youtube';
+import { ListView, View } from 'react-native';
 
 import { FloatingActionButton } from './common';
-import { onPressContact, onPressWatch, onPressListen, onPressGigs } from '../actions';
+import { onPressContact, onPressWatch, onPressListen, onPressGigs, videosFetch } from '../actions';
+import ListItem from './ListItem';
 
 class Watch extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        isReady: false,
-        status: null,
-        quality: null,
-        error: null,
-        isPlaying: true
-      };
-    }
-    render() {
-      return (
-        <View style={{ flex: 1, backgroundColor: '#f9f9f9' }}>
-          <View style={styles.container}>
+  componentWillMount() {
+    this.props.videosFetch(this.props.firestack);
 
-            <YouTube
-              videoId="4Ve0XPoiH74"
-              play={this.state.isPlaying}
-              hidden={false}
-              playsInline
-              onReady={() => { this.setState({ isReady: true }); }}
-              onChangeState={(e) => { this.setState({ status: e.state }); }}
-              onChangeQuality={(e) => { this.setState({ quality: e.quality }); }}
-              onError={(e) => { this.setState({ error: e.error }); }}
-              style={{ alignSelf: 'stretch',
-                       height: 300,
-                       backgroundColor: 'black',
-                       marginVertical: 10 }}
-            />
-
-            <TouchableOpacity
-                onPress={() => {
-                                  this.setState((s) => {
-                                      return { isPlaying: !s.isPlaying };
-                                  });
-                        }}
-            >
-              <Text style={[styles.welcome, { color: 'blue' }]}>
-                {this.state.status === 'playing' ? 'Pause' : 'Play'}
-              </Text>
-            </TouchableOpacity>
-
-            <Text style={styles.instructions}>
-              {this.state.isReady ? 'Player is ready.' : 'Player setting up...'}
-            </Text>
-            <Text style={styles.instructions}>Status: {this.state.status}</Text>
-            <Text style={styles.instructions}>Quality: {this.state.quality}</Text>
-            <Text style={styles.instructions}>
-              {this.state.error ? `Error: ${this.state.error}` : ' '}
-            </Text>
-          </View>
-
-          <FloatingActionButton
-            onPressContact={this.props.onPressContact}
-            onPressWatch={() => { return false; }}
-            onPressListen={this.props.onPressListen}
-            onPressGigs={this.props.onPressGigs}
-          />
-        </View>
-      );
-    }
-
+    this.createDataSource(this.props);
   }
 
-  const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-    margin: 10
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5
-  },
-});
+  componentWillReceiveProps(nextProps) {
+    this.createDataSource(nextProps);
+  }
 
-export default connect(null, { onPressContact,
+  createDataSource({ videos }) {
+    const ds = new ListView.DataSource({
+      rowHasChanged: (r1, r2) => r1 !== r2
+    });
+
+    this.dataSource = ds.cloneWithRows(videos);
+  }
+
+  renderRow(video) {
+    return <ListItem video={video} />;
+  }
+
+  render() {
+    return (
+      <View style={{ flex: 1, backgroundColor: '#f9f9f9' }}>
+        <ListView
+          enableEmptySections
+          dataSource={this.dataSource}
+          renderRow={this.renderRow}
+
+        />
+        <FloatingActionButton
+          onPressContact={this.props.onPressContact}
+          onPressWatch={this.props.onPressWatch}
+          onPressListen={this.props.onPressListen}
+          onPressGigs={this.props.onPressGigs}
+        />
+      </View>
+    );
+  }
+}
+
+const mapStateToProps = (state) => {
+  // const videos = _.map(state.videos, (val) => {
+  //   return { ...val };
+  // });
+  const videos = state.videos;
+  //const firestack = state.setup;
+
+  return { videos };
+};
+
+export default connect(mapStateToProps, { onPressContact,
                                onPressWatch,
                                onPressListen,
-                               onPressGigs })(Watch);
+                               onPressGigs,
+                               videosFetch })(Watch);

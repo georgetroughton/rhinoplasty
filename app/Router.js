@@ -9,8 +9,9 @@ import Contact from './components/Contact';
 import Watch from './components/Watch';
 import Listen from './components/Listen';
 import Gigs from './components/Gigs';
+import Video from './components/Video';
 
-const RouterComponent = () => {
+const RouterComponent = ({ firestack }) => {
   return (
     <Router
       sceneStyle={{ paddingTop: 65 }}
@@ -41,6 +42,12 @@ const RouterComponent = () => {
           key="watchScene"
           component={Watch}
           title="Watch"
+          firestack={firestack}
+        />
+        <Scene
+          key="video"
+          component={Video}
+          title="Video"
         />
       </Scene>
       <Scene key="listen">
