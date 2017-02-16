@@ -14,9 +14,10 @@ import Video from './components/Video';
 const RouterComponent = ({ firestack }) => {
   return (
     <Router
-      sceneStyle={{ paddingTop: 65 }}
+      sceneStyle={{ paddingTop: 65, backgroundColor: '#cccccc' }}
+      barButtonIconStyle={{ tintColor: '#2C3E50' }}
       navigationBarStyle={{ backgroundColor: '#cccccc' }}
-      titleStyle={{ color: '#000000', fontWeight: 'bold', fontSize: 18 }}
+      titleStyle={{ color: '#2C3E50', fontWeight: 'bold', fontSize: 18 }}
       renderRightButton={() => {
         return (<TouchableOpacity onPress={() => { Actions.home({ type: 'replace' }); }}>
                 <Icon name="md-home" style={styles.actionButtonIcon} />

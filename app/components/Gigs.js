@@ -20,7 +20,7 @@ class Gigs extends Component {
 
     render() {
       return (
-        <View style={{ flex: 1, backgroundColor: '#f9f9f9' }}>
+        <View style={{ flex: 1, backgroundColor: '#cccccc' }}>
           <ScrollView>
             <View style={{ flex: 1 }} >
             <Text style={styles.homeText}>

@@ -20,7 +20,7 @@ class Listen extends Component {
 
     render() {
       return (
-        <BackgroundImage>
+        <View style={{ flex: 1, backgroundColor: '#cccccc' }}>
           <ScrollView>
             <View style={{ flex: 1 }} >
             <Text style={styles.homeText}>
@@ -38,7 +38,7 @@ class Listen extends Component {
             onPressListen={() => { return false; }}
             onPressGigs={this.props.onPressGigs}
           />
-        </BackgroundImage>
+        </View>
       );
     }
 

@@ -31,7 +31,6 @@ class Video extends Component {
       return (
 
           <View style={styles.container}>
-            <Text style={styles.instructions}>{this.props.video.title}</Text>
             <YouTube
               videoId={this.props.video.id}
               play={this.state.isPlaying}
@@ -79,8 +78,7 @@ class Video extends Component {
     flex: 1,
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-    margin: 10
+    backgroundColor: '#cccccc'
   },
   welcome: {
     fontSize: 20,
@@ -89,7 +87,7 @@ class Video extends Component {
   },
   instructions: {
     textAlign: 'center',
-    color: '#333333',
+    color: '#2C3E50',
     marginBottom: 5
   },
 });

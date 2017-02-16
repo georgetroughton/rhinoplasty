@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ListView, View } from 'react-native';
 
-import { FloatingActionButton, BackgroundImage } from './common';
+import { FloatingActionButton } from './common';
 import { onPressContact, onPressWatch, onPressListen, onPressGigs, videosFetch } from '../actions';
 import VideoListItem from './VideoListItem';
 
@@ -31,7 +31,7 @@ class VideoList extends Component {
 
   render() {
     return (
-      <BackgroundImage>
+      <View style={{ flex: 1, backgroundColor: '#cccccc' }}>
         <ListView
           enableEmptySections
           dataSource={this.dataSource}
@@ -44,7 +44,7 @@ class VideoList extends Component {
           onPressListen={this.props.onPressListen}
           onPressGigs={this.props.onPressGigs}
         />
-      </BackgroundImage>
+      </View>
     );
   }
 }
