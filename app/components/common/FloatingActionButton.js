@@ -35,38 +35,38 @@ class FloatingActionButton extends Component {
                     }
           >
             <ActionButton.Item
-              buttonColor='#000000'
+              buttonColor='rgba(0,0,0,0.5)'
               title="Gigs"
               onPress={this.props.onPressGigs}
               titleColor="#ffffff"
-              titleBgColor="#000000"
+              titleBgColor="rgba(0,0,0,0.5)"
             >
               <Icon name="md-microphone" style={styles.actionButtonIcon} />
             </ActionButton.Item>
             <ActionButton.Item
-              buttonColor='#000000'
+              buttonColor='rgba(0,0,0,0.5)'
               title="Listen"
               onPress={this.props.onPressListen}
               titleColor="#ffffff"
-              titleBgColor="#000000"
+              titleBgColor="rgba(0,0,0,0.5)"
             >
               <Icon name="md-musical-notes" style={styles.actionButtonIcon} />
             </ActionButton.Item>
             <ActionButton.Item
-              buttonColor='#000000'
+              buttonColor='rgba(0,0,0,0.5)'
               title="Watch"
               onPress={this.props.onPressWatch}
               titleColor="#ffffff"
-              titleBgColor="#000000"
+              titleBgColor="rgba(0,0,0,0.5)"
             >
               <Icon name="md-videocam" style={styles.actionButtonIcon} />
             </ActionButton.Item>
             <ActionButton.Item
-              buttonColor='#000000'
+              buttonColor='rgba(0,0,0,0.5)'
               title="Contact"
               onPress={this.props.onPressContact}
               titleColor="#ffffff"
-              titleBgColor="#000000"
+              titleBgColor="rgba(0,0,0,0.5)"
             >
               <Icon name="md-contact" style={styles.actionButtonIcon} />
             </ActionButton.Item>

@@ -25,7 +25,7 @@ class Home extends Component {
       return (
         <View style={{ flex: 1, backgroundColor: '#cccccc' }}>
           <ScrollView>
-            <View>
+            <View style={{ justifyContent: 'space-between' }}>
               <Image
                 source={require('../assets/images/logo.png')}
                 resizeMode='contain'

@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Actions, Scene, Router } from 'react-native-router-flux';
-
 import Icon from 'react-native-vector-icons/Ionicons';
+import Orientation from 'react-native-orientation';
 
 import Home from './components/Home';
 import Contact from './components/Contact';
@@ -10,6 +10,7 @@ import VideoList from './components/VideoList';
 import Listen from './components/Listen';
 import Gigs from './components/Gigs';
 import Video from './components/Video';
+
 
 const RouterComponent = ({ firestack }) => {
   return (
@@ -23,6 +24,7 @@ const RouterComponent = ({ firestack }) => {
                 <Icon name="md-home" style={styles.actionButtonIcon} />
               </TouchableOpacity>);
       }}
+      onBack={() => { Orientation.lockToPortrait(); Actions.pop(); }}
     >
       <Scene key="home">
         <Scene

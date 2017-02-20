@@ -31,7 +31,6 @@ class VideoListItem extends Component {
 const styles = {
   titleStyle: {
     fontSize: 18,
-    paddingLeft: 15,
     color: '#2C3E50'
   },
   cardView: {

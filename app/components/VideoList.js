@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ListView, View } from 'react-native';
+import Orientation from 'react-native-orientation';
 
 import { FloatingActionButton } from './common';
-import { onPressContact, onPressWatch, onPressListen, onPressGigs, videosFetch } from '../actions';
+import { onPressContact,
+         onPressWatch,
+         onPressListen,
+         onPressGigs,
+         videosFetch,
+         unmountFirebaseVideos } from '../actions';
 import VideoListItem from './VideoListItem';
 
 class VideoList extends Component {
@@ -12,9 +18,14 @@ class VideoList extends Component {
 
     this.createDataSource(this.props);
   }
-
+  componentDidMount() {
+    Orientation.lockToPortrait();
+  }
   componentWillReceiveProps(nextProps) {
     this.createDataSource(nextProps);
+  }
+  componentWillUnmount() {
+    this.props.unmountFirebaseVideos(this.props.firestack);
   }
 
   createDataSource({ videos }) {
@@ -58,4 +69,5 @@ export default connect(mapStateToProps, { onPressContact,
                                onPressWatch,
                                onPressListen,
                                onPressGigs,
-                               videosFetch })(VideoList);
+                               videosFetch,
+                               unmountFirebaseVideos })(VideoList);

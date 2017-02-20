@@ -11,10 +11,8 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
-import { connect } from 'react-redux';
 import YouTube from 'react-native-youtube';
-
-import { onPressContact, onPressWatch, onPressListen, onPressGigs } from '../actions';
+import Orientation from 'react-native-orientation';
 
 class Video extends Component {
     constructor(props) {
@@ -27,46 +25,27 @@ class Video extends Component {
         isPlaying: true
       };
     }
+    componentDidMount() {
+      Orientation.lockToLandscape();
+    }
     render() {
       return (
-
-          <View style={styles.container}>
-            <YouTube
-              videoId={this.props.video.id}
-              play={this.state.isPlaying}
-              hidden={false}
-              playsInline
-              onReady={() => { this.setState({ isReady: true }); }}
-              onChangeState={(e) => { this.setState({ status: e.state }); }}
-              onChangeQuality={(e) => { this.setState({ quality: e.quality }); }}
-              onError={(e) => { this.setState({ error: e.error }); }}
-              style={{ alignSelf: 'stretch',
-                       height: 300,
-                       backgroundColor: 'black',
-                       marginVertical: 10 }}
-            />
-
-            <TouchableOpacity
-                onPress={() => {
-                                  this.setState((s) => {
-                                      return { isPlaying: !s.isPlaying };
-                                  });
-                        }}
-            >
-              <Text style={[styles.welcome, { color: 'blue' }]}>
-                {this.state.status === 'playing' ? 'Pause' : 'Play'}
-              </Text>
-            </TouchableOpacity>
-
-            <Text style={styles.instructions}>
-              {this.state.isReady ? 'Player is ready.' : 'Player setting up...'}
-            </Text>
-            <Text style={styles.instructions}>Status: {this.state.status}</Text>
-            <Text style={styles.instructions}>Quality: {this.state.quality}</Text>
-            <Text style={styles.instructions}>
-              {this.state.error ? `Error: ${this.state.error}` : ' '}
-            </Text>
-          </View>
+        <View style={styles.container}>
+          <YouTube
+            videoId={this.props.video.id}
+            play={this.state.isPlaying}
+            hidden={false}
+            playsInline
+            onReady={() => { this.setState({ isReady: true }); }}
+            onChangeState={(e) => { this.setState({ status: e.state }); }}
+            onChangeQuality={(e) => { this.setState({ quality: e.quality }); }}
+            onError={(e) => { this.setState({ error: e.error }); }}
+            style={{ alignSelf: 'stretch',
+                     height: 300,
+                     backgroundColor: 'black',
+                     marginVertical: 10 }}
+          />
+        </View>
 
       );
     }
@@ -92,7 +71,4 @@ class Video extends Component {
   },
 });
 
-export default connect(null, { onPressContact,
-                               onPressWatch,
-                               onPressListen,
-                               onPressGigs })(Video);
+export default Video;

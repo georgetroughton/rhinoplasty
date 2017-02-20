@@ -6,54 +6,33 @@
 
 import React, { Component } from 'react';
 import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView
+  View
 } from 'react-native';
 import { connect } from 'react-redux';
 
-import { FloatingActionButton, BackgroundImage } from './common';
+import { FloatingActionButton } from './common';
 import { onPressContact, onPressWatch, onPressListen, onPressGigs } from '../actions';
+import BrowseTracksView from './BrowseTracksView';
+import NowPlayingFooterView from './NowPlayingFooterView';
 
 class Listen extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, backgroundColor: '#cccccc' }}>
+        <BrowseTracksView />
+        <NowPlayingFooterView />
 
-    render() {
-      return (
-        <View style={{ flex: 1, backgroundColor: '#cccccc' }}>
-          <ScrollView>
-            <View style={{ flex: 1 }} >
-            <Text style={styles.homeText}>
-                Song
-              </Text>
-              <Text style={styles.homeText}>
-                Song
-              </Text>
-            </View>
-          </ScrollView>
-
-          <FloatingActionButton
-            onPressContact={this.props.onPressContact}
-            onPressWatch={this.props.onPressWatch}
-            onPressListen={() => { return false; }}
-            onPressGigs={this.props.onPressGigs}
-          />
-        </View>
-      );
-    }
-
+        <FloatingActionButton
+          onPressContact={this.props.onPressContact}
+          onPressWatch={this.props.onPressWatch}
+          onPressListen={() => { return false; }}
+          onPressGigs={this.props.onPressGigs}
+        />
+      </View>
+    );
   }
 
-  const styles = StyleSheet.create({
-    homeText: {
-      fontSize: 18,
-      fontWeight: 'bold',
-      color: '#5A5A5A',
-      marginBottom: 10,
-      marginRight: 10,
-      marginLeft: 10
-    }
-  });
+}
 
 export default connect(null, { onPressContact,
                                onPressWatch,
