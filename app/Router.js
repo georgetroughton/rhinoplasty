@@ -8,8 +8,9 @@ import Home from './components/Home';
 import Contact from './components/Contact';
 import VideoList from './components/VideoList';
 import Listen from './components/Listen';
-import Gigs from './components/Gigs';
+import GigsList from './components/GigsList';
 import Video from './components/Video';
+import Gig from './components/Gig';
 
 
 const RouterComponent = ({ firestack }) => {
@@ -62,9 +63,15 @@ const RouterComponent = ({ firestack }) => {
       </Scene>
       <Scene key="gigs">
         <Scene
-          key="gigsScene"
-          component={Gigs}
+          key="gigsList"
+          component={GigsList}
           title="Gigs"
+          firestack={firestack}
+        />
+        <Scene
+          key="gig"
+          component={Gig}
+          title="Gig"
         />
       </Scene>
     </Router>

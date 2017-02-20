@@ -27,14 +27,34 @@
     }
   },
   "songs":{},
-  "gigs":{
-    "g1":{
+  "gigs":
+    [{
+      "id":1486846800,
       "date":"11/02/2017",
       "time":"9pm",
       "venue":"The Shepherds Hut",
       "address":"Eton Wick Rd, Eton Wick, Windsor SL4 6LU",
       "website":"http://www.shepherdshutetonwick.co.uk/",
       "map":"https://www.google.co.uk/maps/place/The+Shepherds+Hut/@51.4975254,-0.63693,15z/data=!4m5!3m4!1s0x0:0x22cf51810f7e8649!8m2!3d51.4975254!4d-0.63693"
+    },
+    {
+      "id":1489870800,
+      "date":"18/03/2017",
+      "time":"9pm",
+      "venue":"The Forresters",
+      "address":"24 Cox Green Ln, Maidenhead SL6 3EN",
+      "website":"",
+      "map":"https://www.google.co.uk/maps/place/The+Foresters/@51.5078729,-0.7412731,15z/data=!4m5!3m4!1s0x0:0xee2e4dbefc1c760b!8m2!3d51.5078729!4d-0.7412731"
+    },
+    {
+      "id":1494709200,
+      "date":"13/05/2017",
+      "time":"9pm",
+      "venue":"The Butler",
+      "address":"85-91 Chatham St, Reading RG1 7DS",
+      "website":"http://www.thebutlerreading.co.uk/",
+      "map":"https://www.google.co.uk/maps/place/The+Butler/@51.4561035,-0.980992,15z/data=!4m5!3m4!1s0x0:0x5960e645f2d403ae!8m2!3d51.4561035!4d-0.980992"
     }
-  }
+  ]
+
 }

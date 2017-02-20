@@ -7,9 +7,7 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  Text,
-  View,
-  TouchableOpacity
+  View
 } from 'react-native';
 import YouTube from 'react-native-youtube';
 import Orientation from 'react-native-orientation';
