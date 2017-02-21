@@ -7,7 +7,8 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  View
+  View,
+  Dimensions
 } from 'react-native';
 import YouTube from 'react-native-youtube';
 import Orientation from 'react-native-orientation';
@@ -27,6 +28,7 @@ class Video extends Component {
       Orientation.lockToLandscape();
     }
     render() {
+      const { height } = Dimensions.get('window');
       return (
         <View style={styles.container}>
           <YouTube
@@ -39,9 +41,9 @@ class Video extends Component {
             onChangeQuality={(e) => { this.setState({ quality: e.quality }); }}
             onError={(e) => { this.setState({ error: e.error }); }}
             style={{ alignSelf: 'stretch',
-                     height: 300,
-                     backgroundColor: 'black',
-                     marginVertical: 10 }}
+                     height: height - 65,
+                     backgroundColor: '#cccccc',
+                     marginVertical: 0 }}
           />
         </View>
 

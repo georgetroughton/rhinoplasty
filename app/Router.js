@@ -21,9 +21,16 @@ const RouterComponent = ({ firestack }) => {
       navigationBarStyle={{ backgroundColor: '#cccccc' }}
       titleStyle={{ color: '#2C3E50', fontWeight: 'bold', fontSize: 18 }}
       renderRightButton={() => {
-        return (<TouchableOpacity onPress={() => { Actions.home({ type: 'replace' }); }}>
-                <Icon name="md-home" style={styles.actionButtonIcon} />
-              </TouchableOpacity>);
+        return (
+          <TouchableOpacity
+                  onPress={() => {
+                                    Orientation.lockToPortrait();
+                                    Actions.home({ type: 'replace' });
+                                  }
+                        }
+          >
+            <Icon name="md-home" style={styles.actionButtonIcon} />
+          </TouchableOpacity>);
       }}
       onBack={() => { Orientation.lockToPortrait(); Actions.pop(); }}
     >
@@ -52,6 +59,7 @@ const RouterComponent = ({ firestack }) => {
           key="video"
           component={Video}
           title="Video"
+          renderRightButton={() => {}}
         />
       </Scene>
       <Scene key="listen">
@@ -72,6 +80,7 @@ const RouterComponent = ({ firestack }) => {
           key="gig"
           component={Gig}
           title="Gig"
+          renderRightButton={() => {}}
         />
       </Scene>
     </Router>

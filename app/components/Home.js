@@ -14,12 +14,15 @@ import {
   ScrollView
 } from 'react-native';
 import { connect } from 'react-redux';
+import Orientation from 'react-native-orientation';
 
 import { FloatingActionButton } from './common';
 import { onPressContact, onPressWatch, onPressListen, onPressGigs } from '../actions';
 
 class Home extends Component {
-
+    componentDidMount() {
+      Orientation.lockToPortrait();
+    }
     render() {
       const { width } = Dimensions.get('window');
       return (
