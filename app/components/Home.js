@@ -14,25 +14,24 @@ import {
   ScrollView
 } from 'react-native';
 import { connect } from 'react-redux';
-import Orientation from 'react-native-orientation';
 
 import { FloatingActionButton } from './common';
 import { onPressContact, onPressWatch, onPressListen, onPressGigs } from '../actions';
 
 class Home extends Component {
-    componentDidMount() {
-      Orientation.lockToPortrait();
-    }
     render() {
-      const { width } = Dimensions.get('window');
+      const { width, height } = Dimensions.get('window');
+      const useWidth = width < height ? width : height;
       return (
-        <View style={{ flex: 1, backgroundColor: '#cccccc' }}>
+        <View
+          style={{ flex: 1, backgroundColor: '#cccccc' }}
+        >
           <ScrollView>
             <View style={{ justifyContent: 'space-between' }}>
               <Image
                 source={require('../assets/images/logo.png')}
                 resizeMode='contain'
-                style={{ width: width - 20, marginLeft: 10, marginRight: 10 }}
+                style={{ width: useWidth - 20, marginLeft: 10, marginRight: 10 }}
               />
               <View style={styles.homeTextView}>
                 <Text style={styles.homeText}>

@@ -19,7 +19,7 @@ const RouterComponent = ({ firestack }) => {
       sceneStyle={{ paddingTop: 65, backgroundColor: '#cccccc' }}
       barButtonIconStyle={{ tintColor: '#2C3E50' }}
       navigationBarStyle={{ backgroundColor: '#cccccc' }}
-      titleStyle={{ color: '#2C3E50', fontWeight: 'bold', fontSize: 18 }}
+      titleStyle={{ color: '#2C3E50', fontWeight: 'bold', fontSize: 20 }}
       renderRightButton={() => {
         return (
           <TouchableOpacity
@@ -59,7 +59,6 @@ const RouterComponent = ({ firestack }) => {
           key="video"
           component={Video}
           title="Video"
-          renderRightButton={() => {}}
         />
       </Scene>
       <Scene key="listen">
@@ -80,7 +79,6 @@ const RouterComponent = ({ firestack }) => {
           key="gig"
           component={Gig}
           title="Gig"
-          renderRightButton={() => {}}
         />
       </Scene>
     </Router>

@@ -20,7 +20,7 @@ class VideoListItem extends Component {
             <Text style={styles.titleStyle}>
               {title}
             </Text>
-            <Icon name="md-arrow-forward" style={styles.actionButtonIcon} />
+            <Icon name="md-play" style={styles.actionButtonIcon} />
           </CardSection>
         </View>
       </TouchableWithoutFeedback>

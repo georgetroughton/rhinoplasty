@@ -18,9 +18,9 @@ class GigsListItem extends Component {
         <View style={styles.cardView}>
           <CardSection>
             <Text style={styles.titleStyle}>
-              {date}{'\n\n'}{venue}
+              {date}{'\n'}{venue}
             </Text>
-            <Icon name="md-arrow-forward" style={styles.actionButtonIcon} />
+            <Icon name="md-information-circle" style={styles.actionButtonIcon} />
           </CardSection>
         </View>
       </TouchableWithoutFeedback>
@@ -31,7 +31,8 @@ class GigsListItem extends Component {
 const styles = {
   titleStyle: {
     fontSize: 18,
-    color: '#2C3E50'
+    color: '#2C3E50',
+    fontWeight: 'bold'
   },
   cardView: {
     margin: 5,
