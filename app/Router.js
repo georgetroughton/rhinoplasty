@@ -39,6 +39,8 @@ const RouterComponent = ({ firestack }) => {
           key="homeScene"
           component={Home}
           title="RhinoPlasty"
+          hideNavBar
+          sceneStyle={{ paddingTop: 0 }}
         />
       </Scene>
       <Scene key="contact">

@@ -6,12 +6,9 @@
 
 import React, { Component } from 'react';
 import {
-  StyleSheet,
-  Text,
   View,
   Image,
-  Dimensions,
-  ScrollView
+  Dimensions
 } from 'react-native';
 import { connect } from 'react-redux';
 
@@ -22,29 +19,18 @@ class Home extends Component {
     render() {
       const { width, height } = Dimensions.get('window');
       const useWidth = width < height ? width : height;
+      const useHeight = width < height ? height : width;
       return (
         <View
-          style={{ flex: 1, backgroundColor: '#cccccc' }}
+          style={{ flex: 1, backgroundColor: '#000000' }}
         >
-          <ScrollView>
-            <View style={{ justifyContent: 'space-between' }}>
+            <View>
               <Image
-                source={require('../assets/images/logo.png')}
-                resizeMode='contain'
-                style={{ width: useWidth - 20, marginLeft: 10, marginRight: 10 }}
+                source={require('../assets/images/mob-bg-bw.png')}
+                resizeMode='stretch'
+                style={{ width: useWidth, height: useHeight }}
               />
-              <View style={styles.homeTextView}>
-                <Text style={styles.homeText}>
-                  RhinoPlasty is made up of 6 seasoned musicians who all have
-                  a passion for having fun, who enjoy the thrill of playing
-                  live to energetic crowds and rocking on!!!!{'\n\n'}
-                  The band covers a collection of the finest rock, soul and blues
-                  songs from the last 50 years and bringing the "HORN" to all
-                  that listen.
-                </Text>
-              </View>
             </View>
-          </ScrollView>
 
           <FloatingActionButton
             onPressContact={this.props.onPressContact}
@@ -57,22 +43,6 @@ class Home extends Component {
     }
 
   }
-
-  const styles = StyleSheet.create({
-    homeTextView: {
-      margin: 10,
-      padding: 5,
-      backgroundColor: 'rgba(1,1,1,0.2)',
-      borderRadius: 5
-    },
-    homeText: {
-      fontSize: 18,
-      fontWeight: 'bold',
-      color: '#2C3E50',
-      margin: 10,
-      padding: 5
-    }
-  });
 
   const mapStateToProps = ({ home }) => {
     const { error, loading } = home;
