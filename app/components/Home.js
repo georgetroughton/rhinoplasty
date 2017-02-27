@@ -69,6 +69,7 @@ class Home extends Component {
       if (this.props.gig) {
         return (
           <View style={[{ width: useWidth - 20 }, styles.nextGigView]}>
+            <Text style={styles.nextGigText}>Next gig - </Text>
             <GigsListItem gig={this.props.gig} fromHome />
           </View>
         );
@@ -130,13 +131,17 @@ class Home extends Component {
       padding: 0,
       backgroundColor: '#cccccc',
       borderRadius: 5
+    },
+    nextGigText: {
+      margin: 10,
+      fontWeight: 'bold',
+      fontSize: 16
     }
   };
 
   const mapStateToProps = ({ home, gigs }) => {
     const { error, loading } = home;
     const gig = gigs[0];
-    console.log(gigs[0]);
     return { error, loading, gig };
   };
 

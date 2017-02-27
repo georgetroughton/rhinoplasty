@@ -7,7 +7,6 @@ import { CardSection } from './common';
 
 class GigsListItem extends Component {
   onRowPress() {
-    console.log(this.props.gig);
     if (this.props.fromHome) {
       Actions.nextGig({ gig: this.props.gig, title: this.props.gig.date });
     } else {
