@@ -7,7 +7,12 @@ import { CardSection } from './common';
 
 class GigsListItem extends Component {
   onRowPress() {
-    Actions.gig({ gig: this.props.gig, title: this.props.gig.date });
+    console.log(this.props.gig);
+    if (this.props.fromHome) {
+      Actions.nextGig({ gig: this.props.gig, title: this.props.gig.date });
+    } else {
+      Actions.gig({ gig: this.props.gig, title: this.props.gig.date });
+    }
   }
 
   render() {

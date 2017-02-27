@@ -41,6 +41,15 @@ const RouterComponent = ({ firestack }) => {
           title="RhinoPlasty"
           hideNavBar
           sceneStyle={{ paddingTop: 0 }}
+          firestack={firestack}
+          initial
+        />
+        <Scene
+          key="nextGig"
+          component={Gig}
+          title="Gig"
+          hideNavBar={false}
+          renderRightButton={() => {}}
         />
       </Scene>
       <Scene key="contact">
@@ -75,7 +84,6 @@ const RouterComponent = ({ firestack }) => {
           key="gigsList"
           component={GigsList}
           title="Gigs"
-          firestack={firestack}
         />
         <Scene
           key="gig"

@@ -23,7 +23,7 @@ class FloatingActionButton extends Component {
       return (
         <View>
           <ActionButton
-            buttonColor="rgba(0,0,0,0.3)"
+            buttonColor={this.props.bgColor !== 'undefined' ? this.props.bgColor : 'rgba(0,0,0,0.3)'}
             icon={<Icon name="ios-menu" style={styles.actionButtonIcon} />}
             degrees={0}
             backdrop={

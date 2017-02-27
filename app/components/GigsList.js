@@ -14,8 +14,6 @@ import GigsListItem from './GigsListItem';
 
 class GigsList extends Component {
   componentWillMount() {
-    this.props.gigsFetch(this.props.firestack);
-
     this.createDataSource(this.props);
   }
   componentDidMount() {
@@ -23,9 +21,6 @@ class GigsList extends Component {
   }
   componentWillReceiveProps(nextProps) {
     this.createDataSource(nextProps);
-  }
-  componentWillUnmount() {
-    this.props.unmountFirebaseGigs(this.props.firestack);
   }
 
   createDataSource({ gigs }) {
