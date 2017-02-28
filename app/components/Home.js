@@ -62,22 +62,25 @@ class Home extends Component {
         this.setState({ firstVisit: 'yes' });
       }
     };
-    renderOnboardingOverlay(useWidth) {
+    renderOnboardingOverlay() {
       if (this.state.firstVisit === 'yes') {
         AsyncStorage.setItem('firstVisit', 'no');
         return (
           <View style={styles.onboardingView}>
             <Text style={styles.onboardingText}>
               <Text style={{ fontWeight: 'bold' }}>Welcome to the RhinoPlasty App!{'\n\n'}</Text>
-              To get around use the menu button placed bottom right of the screen.{'\n\n'}
-              Hope to see you out there at a gig sometime!
+              To get around use the menu button placed bottom right of the screen.
               </Text>
           </View>
         );
       }
+      return null;
+    }
+    renderNextGigView(useWidth) {
       if (this.props.gig) {
         return (
           <View style={[{ width: useWidth - 20 }, styles.nextGigView]}>
+          {this.renderOnboardingOverlay()}
             <Text style={styles.nextGigText}>
               <MCIcon name="guitar-electric" style={styles.actionButtonIcon} />
               Join us at our next gig!
@@ -102,7 +105,7 @@ class Home extends Component {
                 resizeMode='contain'
                 style={[{ width: useWidth, height: useHeight }, styles.mainImage]}
               >
-              {this.renderOnboardingOverlay(useWidth)}
+              {this.renderNextGigView(useWidth)}
               </Image>
             </View>
 
@@ -130,13 +133,12 @@ class Home extends Component {
       alignItems: 'center'
     },
     onboardingView: {
-      marginBottom: 100,
       padding: 8,
-      backgroundColor: 'rgba(255,255,255,0.6)',
+      backgroundColor: '#cccccc',
       borderRadius: 5
     },
     onboardingText: {
-      color: '#000000',
+      color: '#2C3E50',
       fontSize: 18
     },
     nextGigView: {
