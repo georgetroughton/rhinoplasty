@@ -7,15 +7,11 @@ import { FloatingActionButton } from './common';
 import { onPressContact,
          onPressWatch,
          onPressListen,
-         onPressGigs,
-         videosFetch,
-         unmountFirebaseVideos } from '../actions';
+         onPressGigs } from '../actions';
 import VideoListItem from './VideoListItem';
 
 class VideoList extends Component {
   componentWillMount() {
-    this.props.videosFetch(this.props.firestack);
-
     this.createDataSource(this.props);
   }
   componentDidMount() {
@@ -23,9 +19,6 @@ class VideoList extends Component {
   }
   componentWillReceiveProps(nextProps) {
     this.createDataSource(nextProps);
-  }
-  componentWillUnmount() {
-    this.props.unmountFirebaseVideos(this.props.firestack);
   }
 
   createDataSource({ videos }) {
@@ -68,6 +61,4 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, { onPressContact,
                                onPressWatch,
                                onPressListen,
-                               onPressGigs,
-                               videosFetch,
-                               unmountFirebaseVideos })(VideoList);
+                               onPressGigs })(VideoList);

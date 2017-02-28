@@ -11,6 +11,7 @@ import Listen from './components/Listen';
 import GigsList from './components/GigsList';
 import Video from './components/Video';
 import Gig from './components/Gig';
+import Player from './components/Player';
 
 
 const RouterComponent = ({ firestack }) => {
@@ -64,7 +65,6 @@ const RouterComponent = ({ firestack }) => {
           key="videoList"
           component={VideoList}
           title="YouTube Videos"
-          firestack={firestack}
         />
         <Scene
           key="video"
@@ -76,6 +76,11 @@ const RouterComponent = ({ firestack }) => {
         <Scene
           key="listenScene"
           component={Listen}
+          title="Listen"
+        />
+        <Scene
+          key="player"
+          component={Player}
           title="Listen"
         />
       </Scene>

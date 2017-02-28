@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -27,6 +28,7 @@
 		27988C872E9A45C6939B53DE /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8522802A1FC545C0A37582A3 /* Entypo.ttf */; };
 		2F0BADDDB5FF464194798D38 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 035DE08BEC4D4C369FB89E38 /* EvilIcons.ttf */; };
 		3055AC71F09444498AB76AE5 /* libRNBlur.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D6A8B904E447A7A2F9CF72 /* libRNBlur.a */; };
+		3C2A2270BE2D438981794B8A /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD73E907754E76872B2511 /* libRCTVideo.a */; };
 		3E974A9AA2D148A98B326676 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4DFFCD6C3F40A3BD61E6C3 /* libRNVectorIcons.a */; };
 		45AEF2ED5B984C72B4B2A370 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FFDCA9A2118450B93C343C2 /* Zocial.ttf */; };
 		48911DF1CE004EED8F43224E /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30F9390524F8436592D8B1EF /* Ionicons.ttf */; };
@@ -227,6 +229,13 @@
 			remoteGlobalIDString = 8BDB9BC91B4289AE00EF9FEF;
 			remoteInfo = RCTYouTube;
 		};
+		5ECC6D791E65AE1A006E2D29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3ACA28473D764312891D2F7E /* RCTVideo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RCTVideo;
+		};
 		5EEC5A521E51BB64005F8877 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 09B51D9F097D41029C6A9569 /* RNVectorIcons.xcodeproj */;
@@ -291,6 +300,7 @@
 		278C5C0B47FF45B482871BD0 /* libRCTOrientation.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTOrientation.a; sourceTree = "<group>"; };
 		30F9390524F8436592D8B1EF /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		3319C9D97F7D4459AEDB0006 /* RCTYouTube.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTYouTube.xcodeproj; path = "../node_modules/react-native-youtube/RCTYouTube.xcodeproj"; sourceTree = "<group>"; };
+		3ACA28473D764312891D2F7E /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTVideo.xcodeproj; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; };
 		536E5751208344908AA92B41 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		5ECA6FAA1E53307D009CC72B /* YTPlayerView-iframe-player.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "YTPlayerView-iframe-player.html"; sourceTree = "<group>"; };
@@ -309,6 +319,7 @@
 		92679C24C98F8B5EF0602D2D /* Pods-rhinoplasty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rhinoplasty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rhinoplasty/Pods-rhinoplasty.debug.xcconfig"; sourceTree = "<group>"; };
 		931337C0BF124B9691FA5C68 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		9629E8EFC1B4415D9380B734 /* libRCTYouTube.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTYouTube.a; sourceTree = "<group>"; };
+		A0FD73E907754E76872B2511 /* libRCTVideo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTVideo.a; sourceTree = "<group>"; };
 		C57EF30E106F412A83B1CBD8 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		C6D3415F2DF940128683A498 /* libFirestack.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libFirestack.a; sourceTree = "<group>"; };
 		C7AB020C033C475E93627958 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
@@ -348,6 +359,7 @@
 				3055AC71F09444498AB76AE5 /* libRNBlur.a in Frameworks */,
 				1295DE105A6243B1A5EF3840 /* libRCTYouTube.a in Frameworks */,
 				6213191CBA9A4F5AAF1C4E21 /* libRCTOrientation.a in Frameworks */,
+				3C2A2270BE2D438981794B8A /* libRCTVideo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +514,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5ECC6D651E65AE1A006E2D29 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5ECC6D7A1E65AE1A006E2D29 /* libRCTVideo.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5EEC5A351E51BB64005F8877 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -565,6 +585,7 @@
 				72EAFC7A92A6437CA22F84DC /* RNBlur.xcodeproj */,
 				3319C9D97F7D4459AEDB0006 /* RCTYouTube.xcodeproj */,
 				EC1CD90EEF0F4971A6A137C2 /* RCTOrientation.xcodeproj */,
+				3ACA28473D764312891D2F7E /* RCTVideo.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -731,6 +752,10 @@
 				{
 					ProductGroup = 00C302E01ABCB9EE00DB3ED1 /* Products */;
 					ProjectRef = 00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */;
+				},
+				{
+					ProductGroup = 5ECC6D651E65AE1A006E2D29 /* Products */;
+					ProjectRef = 3ACA28473D764312891D2F7E /* RCTVideo.xcodeproj */;
 				},
 				{
 					ProductGroup = 139FDEE71B06529A00C62182 /* Products */;
@@ -935,6 +960,13 @@
 			fileType = archive.ar;
 			path = libRCTYouTube.a;
 			remoteRef = 5ECA6F9E1E532D5A009CC72B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5ECC6D7A1E65AE1A006E2D29 /* libRCTVideo.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTVideo.a;
+			remoteRef = 5ECC6D791E65AE1A006E2D29 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5EEC5A531E51BB64005F8877 /* libRNVectorIcons.a */ = {
@@ -1167,6 +1199,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1190,6 +1223,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",

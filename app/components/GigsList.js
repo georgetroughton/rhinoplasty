@@ -7,9 +7,7 @@ import { FloatingActionButton } from './common';
 import { onPressContact,
          onPressWatch,
          onPressListen,
-         onPressGigs,
-         gigsFetch,
-         unmountFirebaseGigs } from '../actions';
+         onPressGigs } from '../actions';
 import GigsListItem from './GigsListItem';
 
 class GigsList extends Component {
@@ -63,6 +61,4 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, { onPressContact,
                                onPressWatch,
                                onPressListen,
-                               onPressGigs,
-                               gigsFetch,
-                               unmountFirebaseGigs })(GigsList);
+                               onPressGigs })(GigsList);

@@ -13,14 +13,19 @@ import {
   Text
 } from 'react-native';
 import { connect } from 'react-redux';
+import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import { FloatingActionButton } from './common';
+import { FloatingActionButton, Spinner } from './common';
 import { onPressContact,
          onPressWatch,
          onPressListen,
          onPressGigs,
          gigsFetch,
-         unmountFirebaseGigs } from '../actions';
+         videosFetch,
+         unmountFirebaseGigs,
+         unmountFirebaseVideos,
+         tracksFetch,
+         unmountFirebaseTracks } from '../actions';
 import GigsListItem from './GigsListItem';
 
 class Home extends Component {
@@ -30,6 +35,8 @@ class Home extends Component {
 
     componentWillMount() {
       this.props.gigsFetch(this.props.firestack);
+      this.props.videosFetch(this.props.firestack);
+      this.props.tracksFetch(this.props.firestack);
     }
 
     componentDidMount() {
@@ -38,6 +45,8 @@ class Home extends Component {
 
     componentWillUnmount() {
       this.props.unmountFirebaseGigs(this.props.firestack);
+      this.props.unmountFirebaseVideos(this.props.firestack);
+      this.props.unmountFirebaseTracks(this.props.firestack);
     }
 
     _loadInitialState = async () => {
@@ -69,11 +78,15 @@ class Home extends Component {
       if (this.props.gig) {
         return (
           <View style={[{ width: useWidth - 20 }, styles.nextGigView]}>
-            <Text style={styles.nextGigText}>Next gig - </Text>
+            <Text style={styles.nextGigText}>
+              <MCIcon name="guitar-electric" style={styles.actionButtonIcon} />
+              Join us at our next gig!
+            </Text>
             <GigsListItem gig={this.props.gig} fromHome />
           </View>
         );
       }
+      return <Spinner size="large" />;
     }
     render() {
       const { width, height } = Dimensions.get('window');
@@ -135,7 +148,13 @@ class Home extends Component {
     nextGigText: {
       margin: 10,
       fontWeight: 'bold',
-      fontSize: 16
+      fontSize: 18,
+      color: '#2C3E50'
+    },
+    actionButtonIcon: {
+      fontSize: 30,
+      height: 32,
+      color: '#2C3E50'
     }
   };
 
@@ -150,4 +169,8 @@ class Home extends Component {
                                             onPressListen,
                                             onPressGigs,
                                             gigsFetch,
-                                            unmountFirebaseGigs })(Home);
+                                            unmountFirebaseGigs,
+                                            videosFetch,
+                                            unmountFirebaseVideos,
+                                            tracksFetch,
+                                            unmountFirebaseTracks })(Home);

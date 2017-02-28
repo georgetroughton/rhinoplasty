@@ -51,7 +51,7 @@ class Contact extends Component {
               >
                 <MCIcon name="youtube-play" style={styles.iconStyle} />
                 <Text style={styles.homeText}>
-                  RhinoPlasty
+                  RhinoPlasty on YouTube
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity
@@ -60,7 +60,16 @@ class Contact extends Component {
               >
                 <MCIcon name="soundcloud" style={styles.iconStyle} />
                 <Text style={styles.homeText}>
-                  RhinoPlasty
+                  RhinoPlasty on SoundCloud
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{ flexDirection: 'row', alignItems: 'center' }}
+                onPress={() => Linking.openURL('https://www.lemonrock.com/rhinoplasty?page=gigs')}
+              >
+                <MCIcon name="guitar-electric" style={styles.iconStyle} />
+                <Text style={styles.homeText}>
+                  RhinoPlasty on Lemonrock
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity
