@@ -11,6 +11,10 @@ import { onPressContact,
 import GigsListItem from './GigsListItem';
 
 class GigsList extends Component {
+  constructor(props) {
+    super(props);
+    this.renderRow = this.renderRow.bind(this);
+  }
   componentWillMount() {
     this.createDataSource(this.props);
   }
@@ -30,7 +34,8 @@ class GigsList extends Component {
   }
 
   renderRow(gig) {
-    return <GigsListItem gig={gig} />;
+    const venue = this.props.venues[gig.venue];
+    return <GigsListItem gig={gig} venue={venue} />;
   }
 
   render() {
@@ -55,7 +60,9 @@ class GigsList extends Component {
 
 const mapStateToProps = (state) => {
   const gigs = state.gigs;
-  return { gigs };
+  const venues = state.venues;
+  console.log(state);
+  return { gigs, venues };
 };
 
 export default connect(mapStateToProps, { onPressContact,

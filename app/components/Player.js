@@ -12,6 +12,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Slider from 'react-native-slider';
 import Video from 'react-native-video';
 
+import { BAND_IMAGES } from './imageConstants';
+
 
 const window = Dimensions.get('window');
 
@@ -82,7 +84,7 @@ class Player extends Component {
     }
 
 
-    const image = this.props.track.albumImage;
+    const image = BAND_IMAGES[this.props.track.albumImage];
     return (
       <View style={styles.container}>
         <Video
@@ -103,10 +105,8 @@ source={{ uri: this.props.track.url }}
         </View>
 
         <Image
-          style={styles.songImage}
-          source={{ uri: image,
-                        width: window.width - 30,
-                        height: 300 }}
+          style={[styles.songImage, { width: window.width - 30, height: 300 }]}
+          source={{ uri: image }}
         />
         <View style={styles.sliderContainer}>
           <Slider

@@ -10,7 +10,8 @@ import {
   Image,
   Dimensions,
   AsyncStorage,
-  Text
+  Text,
+  NetInfo
 } from 'react-native';
 import { connect } from 'react-redux';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -25,11 +26,14 @@ import { onPressContact,
          unmountFirebaseGigs,
          unmountFirebaseVideos,
          tracksFetch,
-         unmountFirebaseTracks } from '../actions';
+         unmountFirebaseTracks,
+         venuesFetch,
+         unmountFirebaseVenues } from '../actions';
 import GigsListItem from './GigsListItem';
 
 class Home extends Component {
     state = {
+      isConnected: null,
       firstVisit: ''
     };
 
@@ -37,24 +41,43 @@ class Home extends Component {
       this.props.gigsFetch(this.props.firestack);
       this.props.videosFetch(this.props.firestack);
       this.props.tracksFetch(this.props.firestack);
+      this.props.venuesFetch(this.props.firestack);
     }
 
     componentDidMount() {
+      NetInfo.isConnected.addEventListener(
+        'change',
+        this._handleConnectivityChange
+      );
+      NetInfo.isConnected.fetch().done(
+          (isConnected) => { this.setState({ isConnected }); }
+      );
       this._loadInitialState().done();
     }
 
     componentWillUnmount() {
+      NetInfo.isConnected.removeEventListener(
+        'change',
+        this._handleConnectivityChange
+      );
       this.props.unmountFirebaseGigs(this.props.firestack);
       this.props.unmountFirebaseVideos(this.props.firestack);
       this.props.unmountFirebaseTracks(this.props.firestack);
+      this.props.unmountFirebaseVenues(this.props.firestack);
     }
+
+    _handleConnectivityChange = (isConnected) => {
+      this.setState({
+        isConnected,
+      });
+    };
 
     _loadInitialState = async () => {
       try {
         const value = await AsyncStorage.getItem('firstVisit');
         if (value !== null) {
           this.setState({ firstVisit: value });
-          console.log(value);
+          //console.log(value);
         } else {
           this.setState({ firstVisit: 'yes' });
         }
@@ -62,6 +85,7 @@ class Home extends Component {
         this.setState({ firstVisit: 'yes' });
       }
     };
+
     renderOnboardingOverlay() {
       if (this.state.firstVisit === 'yes') {
         AsyncStorage.setItem('firstVisit', 'no');
@@ -76,8 +100,9 @@ class Home extends Component {
       }
       return null;
     }
+
     renderNextGigView(useWidth) {
-      if (this.props.gig) {
+      if (this.props.gig && this.props.venues) {
         return (
           <View style={[{ width: useWidth - 20 }, styles.nextGigView]}>
           {this.renderOnboardingOverlay()}
@@ -85,11 +110,18 @@ class Home extends Component {
               <MCIcon name="guitar-electric" style={styles.actionButtonIcon} />
               Join us at our next gig!
             </Text>
-            <GigsListItem gig={this.props.gig} fromHome />
+            <GigsListItem
+              gig={this.props.gig}
+              venue={this.props.venues[this.props.gig.venue]}
+              fromHome
+            />
           </View>
         );
       }
-      return <Spinner size="large" />;
+      return (<Spinner
+                size="large"
+                connected={this.state.isConnected ? 'Beware data charges!' : 'You do not seem to be connected!'}
+      />);
     }
     render() {
       const { width, height } = Dimensions.get('window');
@@ -160,10 +192,10 @@ class Home extends Component {
     }
   };
 
-  const mapStateToProps = ({ home, gigs }) => {
+  const mapStateToProps = ({ home, gigs, venues }) => {
     const { error, loading } = home;
     const gig = gigs[0];
-    return { error, loading, gig };
+    return { error, loading, gig, venues };
   };
 
   export default connect(mapStateToProps, { onPressContact,
@@ -175,4 +207,6 @@ class Home extends Component {
                                             videosFetch,
                                             unmountFirebaseVideos,
                                             tracksFetch,
-                                            unmountFirebaseTracks })(Home);
+                                            unmountFirebaseTracks,
+                                            venuesFetch,
+                                            unmountFirebaseVenues })(Home);

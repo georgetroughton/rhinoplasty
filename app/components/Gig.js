@@ -3,12 +3,13 @@ import { Text, View, TouchableOpacity, Linking, Image, Dimensions } from 'react-
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { CardSection } from './common';
+import { VENUE_IMAGES } from './imageConstants';
 
 class Gig extends Component {
   renderImage(image, height, width) {
     if (image !== '') {
       return (<Image
-        source={{ uri: image }}
+        source={{ uri: VENUE_IMAGES[image] }}
         resizeMode='contain'
         style={{ height, width: width - 30, marginTop: 10, marginBottom: 10 }}
       />);
@@ -41,13 +42,14 @@ class Gig extends Component {
   }
   render() {
     const { width } = Dimensions.get('window');
-    const { date, time, venue, address, website, map, image, imageRatio } = this.props.gig;
+    const { date, time } = this.props.gig;
+    const { name, address, website, map, image, imageRatio } = this.props.venue;
     const height = ((width - 30) / imageRatio[0]) * imageRatio[1];
     return (
         <View style={styles.cardView}>
           <CardSection style={{ flexDirection: 'column' }}>
             <Text style={styles.titleStyle}>
-              {venue}
+              {name}
             </Text>
             {this.renderImage(image, height, width)}
             <Text style={styles.bodyStyle}>

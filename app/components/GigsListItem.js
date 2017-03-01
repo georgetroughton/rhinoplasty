@@ -7,22 +7,24 @@ import { CardSection } from './common';
 
 class GigsListItem extends Component {
   onRowPress() {
+    const gigProps = { gig: this.props.gig, title: this.props.gig.date, venue: this.props.venue };
     if (this.props.fromHome) {
-      Actions.nextGig({ gig: this.props.gig, title: this.props.gig.date });
+      Actions.nextGig(gigProps);
     } else {
-      Actions.gig({ gig: this.props.gig, title: this.props.gig.date });
+      Actions.gig(gigProps);
     }
   }
 
   render() {
-    const { date, venue } = this.props.gig;
+    const { date } = this.props.gig;
+    const { name } = this.props.venue;
 
     return (
       <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
         <View style={styles.cardView}>
           <CardSection>
             <Text style={styles.titleStyle}>
-              {date}{'\n'}{venue}
+              {date}{'\n'}{name}
             </Text>
             <Icon name="md-information-circle" style={styles.actionButtonIcon} />
           </CardSection>
