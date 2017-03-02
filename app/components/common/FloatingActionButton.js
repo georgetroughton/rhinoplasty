@@ -23,9 +23,11 @@ class FloatingActionButton extends Component {
       return (
         <View>
           <ActionButton
-            buttonColor={this.props.bgColor !== 'undefined' ? this.props.bgColor : 'rgba(0,0,0,0.3)'}
+            buttonColor={this.props.bgColor !== 'undefined'
+                         ? this.props.bgColor
+                         : 'rgba(0,0,0,0.3)'}
             icon={<Icon name="ios-menu" style={styles.actionButtonIcon} />}
-            degrees={0}
+            degrees={180}
             backdrop={
                       <BlurView
                         blurType="xlight"
@@ -92,10 +94,10 @@ class FloatingActionButton extends Component {
       marginLeft: 10
     },
     container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'stretch',
-    backgroundColor: 'transparent',
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'stretch',
+      backgroundColor: 'transparent'
     },
     blurContainer: {
       paddingHorizontal: 20,

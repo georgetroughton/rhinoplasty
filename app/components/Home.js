@@ -30,6 +30,7 @@ import { onPressContact,
          venuesFetch,
          unmountFirebaseVenues } from '../actions';
 import GigsListItem from './GigsListItem';
+import { APP_IMAGES } from './imageConstants';
 
 class Home extends Component {
     state = {
@@ -66,11 +67,48 @@ class Home extends Component {
       this.props.unmountFirebaseVenues(this.props.firestack);
     }
 
-    _handleConnectivityChange = (isConnected) => {
-      this.setState({
-        isConnected,
+    getFormattedDate(date) {
+      const month = (`0${date.getMonth() + 1}`).slice(-2);
+      const day = (`0${date.getDate()}`).slice(-2);
+      const year = date.getFullYear();
+      return `${day}/${month}/${year}`;
+    }
+
+    getNextGig() {
+      console.log(this.props.gigs[0]);
+      const gigs = this.props.gigs;
+      const dates = [];
+      const gigdates = [];
+      for (const gig of Object.keys(gigs)) {
+        gigdates.push(this.toDate(gigs[gig].date));
+      }
+      console.log(gigdates[0]);
+      const today = new Date();
+      for (let i = 0; i < gigdates.length; i++) {
+        const dateToPush = gigdates[i];
+         if (dateToPush > today) {
+           dates.push(dateToPush);
+          }
+      }
+      console.log(dates[0]);
+      dates.sort((a, b) => {
+        return Math.abs((1 - a) / new Date()) - Math.abs((1 - b) / new Date());
       });
-    };
+      console.log(dates[0]);
+      const dateStr = this.getFormattedDate(dates[0]);
+      let nextGig = {};
+      for (const gig of Object.keys(gigs)) {
+        if (gigs[gig].date === dateStr) {
+          nextGig = gigs[gig];
+        }
+      }
+      return nextGig;
+    }
+
+    toDate(dateStr) {
+        const parts = dateStr.split('/');
+        return new Date(parts[2], parts[1] - 1, parts[0]);
+    }
 
     _loadInitialState = async () => {
       try {
@@ -84,6 +122,12 @@ class Home extends Component {
       } catch (error) {
         this.setState({ firstVisit: 'yes' });
       }
+    };
+
+    _handleConnectivityChange = (isConnected) => {
+      this.setState({
+        isConnected,
+      });
     };
 
     renderOnboardingOverlay() {
@@ -102,7 +146,9 @@ class Home extends Component {
     }
 
     renderNextGigView(useWidth) {
-      if (this.props.gig && this.props.venues) {
+      if (this.props.gig && this.props.venue) {
+        console.log(this.props.gigs);
+        const gig = this.getNextGig();
         return (
           <View style={[{ width: useWidth - 20 }, styles.nextGigView]}>
           {this.renderOnboardingOverlay()}
@@ -111,8 +157,8 @@ class Home extends Component {
               Join us at our next gig!
             </Text>
             <GigsListItem
-              gig={this.props.gig}
-              venue={this.props.venues[this.props.gig.venue]}
+              gig={gig}
+              venue={this.props.venues[gig.venue]}
               fromHome
             />
           </View>
@@ -120,7 +166,9 @@ class Home extends Component {
       }
       return (<Spinner
                 size="large"
-                connected={this.state.isConnected ? 'Beware data charges!' : 'You do not seem to be connected!'}
+                connected={this.state.isConnected
+                           ? 'Getting the good stuff!'
+                           : 'Dude, you need to be connected!'}
       />);
     }
     render() {
@@ -133,7 +181,7 @@ class Home extends Component {
         >
             <View>
               <Image
-                source={require('../assets/images/mob-bg-bw.png')}
+                source={{ uri: APP_IMAGES.IMAGE_HOME }}
                 resizeMode='contain'
                 style={[{ width: useWidth, height: useHeight }, styles.mainImage]}
               >
@@ -194,8 +242,9 @@ class Home extends Component {
 
   const mapStateToProps = ({ home, gigs, venues }) => {
     const { error, loading } = home;
-    const gig = gigs[0];
-    return { error, loading, gig, venues };
+    const gig = Object.keys(gigs).length;
+    const venue = Object.keys(venues).length;
+    return { error, loading, gigs, venues, gig, venue };
   };
 
   export default connect(mapStateToProps, { onPressContact,
