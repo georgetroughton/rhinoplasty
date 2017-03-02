@@ -7,7 +7,6 @@ import com.facebook.react.ReactApplication;
 import com.brentvatne.react.ReactVideoPackage;
 import com.github.yamill.orientation.OrientationPackage;
 import com.inprogress.reactnativeyoutube.ReactNativeYouTube;
-import com.cmcewen.blurview.BlurViewPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import io.fullstack.firestack.FirestackPackage;
 import com.facebook.react.ReactInstanceManager;
@@ -34,7 +33,6 @@ public class MainApplication extends Application implements ReactApplication {
             new ReactVideoPackage(),
             new OrientationPackage(this),
             new ReactNativeYouTube(),
-            new BlurViewPackage(),
             new VectorIconsPackage(),
             new FirestackPackage()
       );

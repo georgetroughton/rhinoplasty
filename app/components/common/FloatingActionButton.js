@@ -5,81 +5,81 @@
  */
 
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  View,
-  Dimensions
-} from 'react-native';
 
 import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { BlurView } from 'react-native-blur';
+import BlurComponent from './BlurComponent';
 
 class FloatingActionButton extends Component {
 
     render() {
-      const { width, height } = Dimensions.get('window');
-
       return (
-        <View>
           <ActionButton
             buttonColor={this.props.bgColor !== 'undefined'
                          ? this.props.bgColor
-                         : 'rgba(0,0,0,0.3)'}
+                         : 'rgba(80,80,80,1)'}
             icon={<Icon name="ios-menu" style={styles.actionButtonIcon} />}
             degrees={180}
             backdrop={
-                      <BlurView
-                        blurType="xlight"
-                        blurAmount={2}
-                        style={{ width, height }}
-                      />
+                      <BlurComponent />
                     }
+            hideShadow
+            backgroundTappable={false}
           >
             <ActionButton.Item
-              buttonColor='rgba(0,0,0,0.5)'
+              buttonColor='rgba(0,0,0,1)'
               title="Gigs"
               onPress={this.props.onPressGigs}
-              titleColor="#ffffff"
-              titleBgColor="rgba(0,0,0,0.5)"
+              textStyle={styles.actionButtonText}
+              textContainerStyle={styles.actionButtonTextContainer}
             >
               <Icon name="md-microphone" style={styles.actionButtonIcon} />
             </ActionButton.Item>
             <ActionButton.Item
-              buttonColor='rgba(0,0,0,0.5)'
+              buttonColor='rgba(0,0,0,1)'
               title="Listen"
               onPress={this.props.onPressListen}
-              titleColor="#ffffff"
-              titleBgColor="rgba(0,0,0,0.5)"
+              textStyle={styles.actionButtonText}
+              textContainerStyle={styles.actionButtonTextContainer}
             >
               <Icon name="md-musical-notes" style={styles.actionButtonIcon} />
             </ActionButton.Item>
             <ActionButton.Item
-              buttonColor='rgba(0,0,0,0.5)'
+              buttonColor='rgba(0,0,0,1)'
               title="Watch"
               onPress={this.props.onPressWatch}
-              titleColor="#ffffff"
-              titleBgColor="rgba(0,0,0,0.5)"
+              textStyle={styles.actionButtonText}
+              textContainerStyle={styles.actionButtonTextContainer}
             >
               <Icon name="md-videocam" style={styles.actionButtonIcon} />
             </ActionButton.Item>
             <ActionButton.Item
-              buttonColor='rgba(0,0,0,0.5)'
+              buttonColor='rgba(0,0,0,1)'
               title="Contact"
               onPress={this.props.onPressContact}
-              titleColor="#ffffff"
-              titleBgColor="rgba(0,0,0,0.5)"
+              textStyle={styles.actionButtonText}
+              textContainerStyle={styles.actionButtonTextContainer}
             >
               <Icon name="md-contact" style={styles.actionButtonIcon} />
             </ActionButton.Item>
           </ActionButton>
-        </View>
       );
     }
 
   }
 
-  const styles = StyleSheet.create({
+  const styles = {
+    actionButtonText: {
+      backgroundColor: 'black',
+      color: 'white',
+      fontWeight: 'bold',
+      fontSize: 18
+    },
+    actionButtonTextContainer: {
+      backgroundColor: 'black',
+      borderColor: 'black',
+      height: 30
+    },
     actionButtonIcon: {
       fontSize: 20,
       height: 22,
@@ -102,6 +102,6 @@ class FloatingActionButton extends Component {
     blurContainer: {
       paddingHorizontal: 20,
     }
-  });
+  };
 
 export { FloatingActionButton };

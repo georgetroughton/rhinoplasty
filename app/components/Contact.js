@@ -85,6 +85,7 @@ class Contact extends Component {
           </ScrollView>
 
           <FloatingActionButton
+            bgColor={'rgba(80,80,80,1)'}
             onPressContact={() => { return false; }}
             onPressWatch={this.props.onPressWatch}
             onPressListen={this.props.onPressListen}

@@ -43,6 +43,7 @@ class VideoList extends Component {
 
         />
         <FloatingActionButton
+          bgColor={'rgba(80,80,80,1)'}
           onPressContact={this.props.onPressContact}
           onPressWatch={() => { return false; }}
           onPressListen={this.props.onPressListen}

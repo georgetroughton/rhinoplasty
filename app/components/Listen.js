@@ -43,6 +43,7 @@ class Listen extends Component {
 
         />
         <FloatingActionButton
+          bgColor={'rgba(80,80,80,1)'}
           onPressContact={this.props.onPressContact}
           onPressWatch={this.props.onPressWatch}
           onPressListen={() => { return false; }}
