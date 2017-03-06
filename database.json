@@ -30,13 +30,13 @@
       {
         "title": "Bad Moon Rising",
         "album": "SoundCloud",
-        "albumImage": "IMAGE_DARREN",
+        "albumImage": "IMAGE_KEN",
         "url": "https://api.soundcloud.com/tracks/277406792/stream?client_id=xWZHyB8RjEqVrdqairvnGbuoP0c6zHvh"
       },
       {
         "title": "Barefootin",
         "album": "SoundCloud",
-        "albumImage": "IMAGE_NEIL",
+        "albumImage": "IMAGE_ROD",
         "url": "https://api.soundcloud.com/tracks/277406790/stream?client_id=xWZHyB8RjEqVrdqairvnGbuoP0c6zHvh"
       },
       {
@@ -44,6 +44,24 @@
         "album": "SoundCloud",
         "albumImage": "IMAGE_GEORGE",
         "url": "https://api.soundcloud.com/tracks/277406764/stream?client_id=xWZHyB8RjEqVrdqairvnGbuoP0c6zHvh"
+      },
+      {
+        "title": "Feel Like Making Love",
+        "album": "SoundCloud",
+        "albumImage": "IMAGE_DARREN",
+        "url": "https://api.soundcloud.com/tracks/269620121/stream?client_id=xWZHyB8RjEqVrdqairvnGbuoP0c6zHvh"
+      },
+      {
+        "title": "Desire",
+        "album": "SoundCloud",
+        "albumImage": "IMAGE_NEIL",
+        "url": "https://api.soundcloud.com/tracks/269620413/stream?client_id=xWZHyB8RjEqVrdqairvnGbuoP0c6zHvh"
+      },
+      {
+        "title": "Mustang Sally",
+        "album": "SoundCloud",
+        "albumImage": "IMAGE_BRIAN",
+        "url": "https://api.soundcloud.com/tracks/277406773/stream?client_id=xWZHyB8RjEqVrdqairvnGbuoP0c6zHvh"
       }
     ],
   "gigs":
@@ -58,9 +76,19 @@
       "venue":"FORRESTERS"
     },
     {
+      "date":"24/03/2017",
+      "time":"when we start!",
+      "venue":"PRIVATE"
+    },
+    {
       "date":"13/05/2017",
       "time":"9pm",
       "venue":"BUTLER"
+    },
+    {
+      "date":"14/07/2017",
+      "time":"when we start!",
+      "venue":"PRIVATE"
     }
   ],
   "venues":{
@@ -87,6 +115,14 @@
       "address":"85-91 Chatham St, Reading RG1 7DS",
       "website":"http://www.thebutlerreading.co.uk/",
       "map":"https://www.google.co.uk/maps/place/The+Butler/@51.4561035,-0.980992,15z/data=!4m5!3m4!1s0x0:0x5960e645f2d403ae!8m2!3d51.4561035!4d-0.980992"
+    },
+    "PRIVATE":{
+      "name":"Private Function",
+      "image":"",
+      "imageRatio": [1,1],
+      "address":"",
+      "website":"",
+      "map":""
     }
   }
 

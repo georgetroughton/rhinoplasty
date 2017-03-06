@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "642256894995",
+    "firebase_url": "https://rhinoplasty-535b0.firebaseio.com",
+    "project_id": "rhinoplasty-535b0",
+    "storage_bucket": "rhinoplasty-535b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642256894995:android:f59e7a3baf51ab0e",
+        "android_client_info": {
+          "package_name": "net.ultimatebigfish.rhinoplasty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "642256894995-firjul7os2joh1tf4brmgoetlhjg60fv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLYzgx2klT7lwdFZGj-C-InUxwN0C59tc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

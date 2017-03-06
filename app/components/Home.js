@@ -11,7 +11,8 @@ import {
   Dimensions,
   AsyncStorage,
   Text,
-  NetInfo
+  NetInfo,
+  Platform
 } from 'react-native';
 import { connect } from 'react-redux';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -75,14 +76,12 @@ class Home extends Component {
     }
 
     getNextGig() {
-      console.log(this.props.gigs[0]);
       const gigs = this.props.gigs;
       const dates = [];
       const gigdates = [];
       for (const gig of Object.keys(gigs)) {
         gigdates.push(this.toDate(gigs[gig].date));
       }
-      console.log(gigdates[0]);
       const today = new Date();
       for (let i = 0; i < gigdates.length; i++) {
         const dateToPush = gigdates[i];
@@ -90,11 +89,9 @@ class Home extends Component {
            dates.push(dateToPush);
           }
       }
-      console.log(dates[0]);
       dates.sort((a, b) => {
         return Math.abs((1 - a) / new Date()) - Math.abs((1 - b) / new Date());
       });
-      console.log(dates[0]);
       const dateStr = this.getFormattedDate(dates[0]);
       let nextGig = {};
       for (const gig of Object.keys(gigs)) {
@@ -115,7 +112,6 @@ class Home extends Component {
         const value = await AsyncStorage.getItem('firstVisit');
         if (value !== null) {
           this.setState({ firstVisit: value });
-          //console.log(value);
         } else {
           this.setState({ firstVisit: 'yes' });
         }
@@ -150,8 +146,12 @@ class Home extends Component {
         console.log(this.props.gigs);
         const gig = this.getNextGig();
         return (
-          <View style={[{ width: useWidth - 20 }, styles.nextGigView]}>
-          {this.renderOnboardingOverlay()}
+          <View
+            style={[{ width: useWidth - 20,
+                      marginBottom: Platform.OS === 'ios' ? 120 : 150 },
+                    styles.nextGigView]}
+          >
+            {this.renderOnboardingOverlay()}
             <Text style={styles.nextGigText}>
               <MCIcon name="guitar-electric" style={styles.actionButtonIcon} />
               Join us at our next gig!
@@ -182,7 +182,7 @@ class Home extends Component {
             <View>
               <Image
                 source={{ uri: APP_IMAGES.IMAGE_HOME }}
-                resizeMode='contain'
+                resizeMode='cover'
                 style={[{ width: useWidth, height: useHeight }, styles.mainImage]}
               >
               {this.renderNextGigView(useWidth)}
@@ -222,7 +222,6 @@ class Home extends Component {
       fontSize: 18
     },
     nextGigView: {
-      marginBottom: 100,
       padding: 0,
       backgroundColor: '#cccccc',
       borderRadius: 5

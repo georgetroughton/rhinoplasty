@@ -8,7 +8,8 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
-  Dimensions
+  Dimensions,
+  Platform
 } from 'react-native';
 import YouTube from 'react-native-youtube';
 import Orientation from 'react-native-orientation';
@@ -29,10 +30,13 @@ class Video extends Component {
     }
     render() {
       const { height } = Dimensions.get('window');
+      const iosStyle = { alignSelf: 'stretch', height: height - 65 };
+      const androidStyle = { width: ((height - 85) / 9) * 16, height: height - 85 };
       return (
         <View style={styles.container}>
           <YouTube
             videoId={this.props.video.id}
+            apiKey="AIzaSyDLYzgx2klT7lwdFZGj-C-InUxwN0C59tc"
             play={this.state.isPlaying}
             hidden={false}
             playsInline
@@ -40,10 +44,9 @@ class Video extends Component {
             onChangeState={(e) => { this.setState({ status: e.state }); }}
             onChangeQuality={(e) => { this.setState({ quality: e.quality }); }}
             onError={(e) => { this.setState({ error: e.error }); }}
-            style={{ alignSelf: 'stretch',
-                     height: height - 65,
+            style={[Platform.OS === 'ios' ? iosStyle : androidStyle, {
                      backgroundColor: '#cccccc',
-                     marginVertical: 0 }}
+                     marginVertical: 0 }]}
           />
         </View>
 
@@ -55,7 +58,7 @@ class Video extends Component {
   const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: '#cccccc'
   },

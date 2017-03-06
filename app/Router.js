@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import { Actions, Scene, Router } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Orientation from 'react-native-orientation';
@@ -15,9 +15,10 @@ import Player from './components/Player';
 
 
 const RouterComponent = ({ firestack }) => {
+  const navBarHeight = Platform.OS === 'ios' ? 64 : 54;
   return (
     <Router
-      sceneStyle={{ paddingTop: 65, backgroundColor: '#cccccc' }}
+      sceneStyle={{ paddingTop: navBarHeight, backgroundColor: '#cccccc' }}
       barButtonIconStyle={{ tintColor: '#2C3E50' }}
       navigationBarStyle={{ backgroundColor: '#cccccc' }}
       titleStyle={{ color: '#2C3E50', fontWeight: 'bold', fontSize: 20 }}
