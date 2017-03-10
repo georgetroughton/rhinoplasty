@@ -1,0 +1,4 @@
+export const TEXT_COLOUR_PRIMARY = '#2C3E50';
+export const ICON_COLOUR_PRIMARY = '#2C3E50';
+export const BACKGROUND_COLOUR_PRIMARY = '#CCCCCC';
+export const ACTION_BUTTON_BACKGROUND_PRIMARY = 'rgba(80,80,80,1)';

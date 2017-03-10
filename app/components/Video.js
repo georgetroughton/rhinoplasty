@@ -31,7 +31,7 @@ class Video extends Component {
     render() {
       const { height } = Dimensions.get('window');
       const iosStyle = { alignSelf: 'stretch', height: height - 65 };
-      const androidStyle = { width: ((height - 85) / 9) * 16, height: height - 85 };
+      const androidStyle = { width: ((height - 95) / 9) * 16, height: height - 95 };
       return (
         <View style={styles.container}>
           <YouTube

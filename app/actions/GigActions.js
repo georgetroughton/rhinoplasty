@@ -4,9 +4,11 @@ import {
 } from './types';
 
 export const gigsFetch = (firestack) => {
+  const ref = firestack.database.ref('/gigs');
+  ref.keepSynced(true);
   //console.log(firestack.database);
   return (dispatch) => {
-    firestack.database.ref('/gigs').orderByKey()
+    ref.orderByKey()
       .on('value', snapshot => {
         dispatch({ type: GIGS_FETCH_SUCCESS, payload: snapshot.val() });
       });

@@ -32,6 +32,10 @@ import { onPressContact,
          unmountFirebaseVenues } from '../actions';
 import GigsListItem from './GigsListItem';
 import { APP_IMAGES } from './imageConstants';
+import { TEXT_COLOUR_PRIMARY,
+         ICON_COLOUR_PRIMARY,
+         BACKGROUND_COLOUR_PRIMARY,
+         ACTION_BUTTON_BACKGROUND_PRIMARY } from '../styles/common';
 
 class Home extends Component {
     state = {
@@ -143,7 +147,7 @@ class Home extends Component {
 
     renderNextGigView(useWidth) {
       if (this.props.gig && this.props.venue) {
-        console.log(this.props.gigs);
+        //console.log(this.props.gigs);
         const gig = this.getNextGig();
         return (
           <View
@@ -190,7 +194,7 @@ class Home extends Component {
             </View>
 
           <FloatingActionButton
-            bgColor={'rgba(80,80,80,1)'}
+            bgColor={ACTION_BUTTON_BACKGROUND_PRIMARY}
             onPressContact={this.props.onPressContact}
             onPressWatch={this.props.onPressWatch}
             onPressListen={this.props.onPressListen}
@@ -206,7 +210,7 @@ class Home extends Component {
   const styles = {
     mainView: {
       flex: 1,
-      backgroundColor: '#000000'
+      backgroundColor: BACKGROUND_COLOUR_PRIMARY
     },
     mainImage: {
       justifyContent: 'flex-end',
@@ -214,28 +218,28 @@ class Home extends Component {
     },
     onboardingView: {
       padding: 8,
-      backgroundColor: '#cccccc',
+      backgroundColor: BACKGROUND_COLOUR_PRIMARY,
       borderRadius: 5
     },
     onboardingText: {
-      color: '#2C3E50',
+      color: TEXT_COLOUR_PRIMARY,
       fontSize: 18
     },
     nextGigView: {
       padding: 0,
-      backgroundColor: '#cccccc',
+      backgroundColor: BACKGROUND_COLOUR_PRIMARY,
       borderRadius: 5
     },
     nextGigText: {
       margin: 10,
       fontWeight: 'bold',
       fontSize: 18,
-      color: '#2C3E50'
+      color: TEXT_COLOUR_PRIMARY
     },
     actionButtonIcon: {
       fontSize: 30,
       height: 32,
-      color: '#2C3E50'
+      color: ICON_COLOUR_PRIMARY
     }
   };
 
