@@ -81,6 +81,11 @@
       "venue":"PRIVATE"
     },
     {
+      "date":"28/04/2017",
+      "time":"when we start!",
+      "venue":"PRIVATE"
+    },
+    {
       "date":"13/05/2017",
       "time":"9pm",
       "venue":"BUTLER"
@@ -89,6 +94,16 @@
       "date":"14/07/2017",
       "time":"when we start!",
       "venue":"PRIVATE"
+    },
+    {
+      "date":"23/09/2017",
+      "time":"9pm",
+      "venue":"FORRESTERS"
+    },
+    {
+      "date":"09/12/2017",
+      "time":"9pm",
+      "venue":"FORRESTERS"
     }
   ],
   "venues":{
