@@ -176,8 +176,8 @@
     },
     "EMPEROR":{
       "name":"The Emperor",
-      "image":"",
-      "imageRatio": [4,3],
+      "image":"IMAGE_EMPEROR",
+      "imageRatio": [2,1],
       "address":"Blackpond Lane, Slough, SL2 3EG",
       "website":"http://theemperorfarnhamcommon.co.uk//",
       "map":"https://www.google.co.uk/maps/place/The+Emperor/@51.549198,-0.618121,15z/data=!4m5!3m4!1s0x0:0x213aabe7c1414dad!8m2!3d51.549198!4d-0.618121"
